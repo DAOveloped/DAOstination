@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Particles from "./components/particles";
 
 const navigation = [
-  { name: "Projects", href: "/projects" },
+  { name: "DAOstinations", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 
