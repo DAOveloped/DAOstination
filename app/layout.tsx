@@ -9,15 +9,15 @@ export const metadata: Metadata = {
     default: "DAOstination DAO",
     template: "%s | DAOstination",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Where is your next DAOstination? ",
   openGraph: {
     title: "DAOstination",
-    description: "Co-founder of unkey.dev and founder of planetfall.io",
+    description: "Where is your next DAOstination?",
     url: "https://DAOstination.vercel.app",
-    siteName: "chronark.com",
+    siteName: "DAOstination.vercel.app",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://twitter.com/DAOstination/photo",
         width: 1920,
         height: 1080,
       },
