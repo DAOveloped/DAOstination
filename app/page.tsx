@@ -1,5 +1,6 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Particles from "./components/particles";
 
 const navigation = [
@@ -8,6 +9,25 @@ const navigation = [
 ];
 
 export default function Home() {
+  // Function to generate random color
+  const generateRandomColor = () => {
+    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+  };
+
+  // State to store random text gradient
+  const [randomTextGradient, setRandomTextGradient] = useState("");
+
+  // Generate random text gradient on component mount
+  useEffect(() => {
+    const numberOfColors = 5; // You can adjust the number of colors in the gradient
+    let gradient = "linear-gradient(to right";
+    for (let i = 0; i < numberOfColors; i++) {
+      gradient += `, ${generateRandomColor()}`;
+    }
+    gradient += ")";
+    setRandomTextGradient(gradient);
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
@@ -28,24 +48,23 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <h1 className="z-10 text-4xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text ">
-        chronark
+      <h1
+        className="z-10 text-3xl duration-1000 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap"
+        style={{
+          backgroundImage: randomTextGradient,
+          WebkitBackgroundClip: "text",
+          WebkitTextFillColor: "transparent",
+        }} // Apply random text gradient
+      >
+        DAOstination DAO
       </h1>
 
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-zinc-500 ">
-          I'm building{" "}
-          <Link
-            target="_blank"
-            href="https://unkey.dev"
-            className="underline duration-500 hover:text-zinc-300"
-          >
-            unkey.dev
-          </Link> to solve API authentication and authorization for developers.
+          Where is your next DAOstination?
         </h2>
       </div>
     </div>
   );
-
 }
