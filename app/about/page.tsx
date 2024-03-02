@@ -12,7 +12,8 @@ const navigation = [
 export default function Home() {
   // Function to generate random color
   const generateRandomColor = () => {
-    return "#" + Math.floor(Math.random() * 16777215).toString(16);
+    const color = Math.floor(Math.random() * 16777215).toString(16);
+    return `#${color.padStart(6, "0")}`;
   };
 
   // State to store random text gradient
@@ -32,12 +33,12 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center justify-center w-screen bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
-        <ul className="flex items-center justify-center gap-4">
+        <ul className="flex items-center justify-center gap-4 ">
           {navigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300"
+              className="text-sm duration-500 text-zinc-500 hover:text-zinc-300 "
             >
               {item.name}
             </Link>
@@ -46,8 +47,8 @@ export default function Home() {
       </nav>
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <Particles
-        className="absolute inset-0 -z-10 animate-fade-in"
-        quantity={100}
+        className="fixed inset-0 -z-10 animate-fade-in "
+        quantity={3000}
       />
       <h1
         className="z-10 text-3xl duration-1000 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-8xl whitespace-nowrap"
@@ -68,10 +69,16 @@ export default function Home() {
       >
         <br />
         <div
-          className="text-md text-zinc-300 my-16 text-left animate-fade-in"
-          style={{ width: "70%", margin: "0 auto", marginBottom: "4em" }}
+          className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+          style={{ width: "70%", margin: "0 auto" }}
         >
-          <p style={{ textIndent: "1.5em" }}>
+          Overview
+        </div>
+        <div
+          className="text-md text-zinc-300 my-16 text-left animate-fade-in"
+          style={{ width: "70%", margin: "0 auto" }}
+        >
+          <p style={{ marginTop: "1em", textIndent: "1.5em" }}>
             DAOstination DAO is a platform where members come together to
             collaboratively fund the purchase, rental, or lease of various
             destinations around the world. Whether it's a cozy cabin in the
@@ -81,6 +88,7 @@ export default function Home() {
             unforgettable experiences in diverse settings.
           </p>
           <br />
+
           <p style={{ textIndent: "1.5em" }}>
             Designed to provide a dynamic platform with various membership
             tiers, voting mechanisms, and governance structures, its main goal
@@ -101,12 +109,62 @@ export default function Home() {
             in governance processes. They represent a key component of
             DAOstination DAO's commitment to empowering its community.
           </p>
-          <p style={{ marginTop: "1em", textIndent: "1.5em" }}>
+          <p
+            style={{
+              marginTop: "1em",
+              textIndent: "1.5em",
+              marginBottom: "4em",
+            }}
+          >
             To maintain integrity and fairness within the platform, a governance
             board will be established. This board will oversee the distribution
             of membership benefits and uphold the principles of transparency and
             accountability. By fostering a balanced ecosystem, DAOstination DAO
             aims to create a thriving community where every voice is heard.
+          </p>
+
+          <br />
+          <div
+            className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+            style={{ width: "70%", margin: "0 auto" }}
+          >
+            User Journey
+          </div>
+          <p
+            style={{
+              marginTop: "1em",
+              textIndent: "1.5em",
+              marginBottom: "4em",
+            }}
+          >
+            Token tax will fund experiences, destinations will be voted on
+            quarterly, 1 quarter in advance to allow for time to coordinate
+            individual travel and airfare, locations will serve as a think tank
+            style incubator to help other like minded crypto enthusiasts to
+            network and socialize, some funds will be allocated to a scholarship
+            program that will fund the accomodations, airfare and daily stipend
+            for a selected candidate to attend a crypto conference or
+            educational event and stay in the DAO location with other members
+          </p>
+          <div
+            className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+            style={{ width: "70%", margin: "0 auto" }}
+          >
+            Risk Management
+          </div>
+          <p
+            style={{
+              marginTop: "1em",
+              textIndent: "1.5em",
+              marginBottom: "4em",
+            }}
+          >
+            Royalties from the sales of NFTs will be help in escrow to cover any
+            potential damages or insurance claims on property stays, any member
+            involved in damages commited to a property will have their status
+            revoked, any member involved in any criminal behavior or behavior
+            contrary to the code of conduct set forth by the members will also
+            have their priveledges revoked
           </p>
         </div>
       </div>
