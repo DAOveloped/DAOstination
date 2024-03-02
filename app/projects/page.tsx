@@ -20,9 +20,11 @@ export default async function ProjectsPage() {
     return acc;
   }, {} as Record<string, number>);
 
-  const featured = allProjects.find((project) => project.slug === "unkey")!;
-  const top2 = allProjects.find((project) => project.slug === "planetfall")!;
-  const top3 = allProjects.find((project) => project.slug === "highstorm")!;
+  const featured = allProjects.find(
+    (project) => project.slug === "linksscotland"
+  )!;
+  const top2 = allProjects.find((project) => project.slug === "seoul")!;
+  const top3 = allProjects.find((project) => project.slug === "dubai")!;
   const sorted = allProjects
     .filter((p) => p.published)
     .filter(
@@ -46,7 +48,8 @@ export default async function ProjectsPage() {
             DAOstinations
           </h2>
           <p className="mt-4 text-zinc-400">
-            These are the past, current, or future destinations of the DAO.
+            These are just some of the current ideas for future daostinations,
+            though we need you to join and add more.
           </p>
         </div>
         <div className="w-full h-px bg-zinc-800" />

@@ -2,6 +2,7 @@
 import { ArrowLeft, Eye, Github, Twitter } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
+import { RiDiscordLine } from "react-icons/ri";
 
 type Props = {
   project: {
@@ -67,7 +68,7 @@ export const Header: React.FC<Props> = ({ project, views }) => {
                 views
               )}
             </span>
-            <Link target="_blank" href="https://twitter.com/chronark_">
+            <Link target="_blank" href="https://twitter.com/DAOstination">
               <Twitter
                 className={`w-6 h-6 duration-200 hover:font-medium ${
                   isIntersecting
@@ -76,8 +77,23 @@ export const Header: React.FC<Props> = ({ project, views }) => {
                 } `}
               />
             </Link>
-            <Link target="_blank" href="https://github.com/chronark">
+            <Link
+              target="_blank"
+              href="https://github.com/DAOveloped/DAOstination"
+            >
               <Github
+                className={`w-6 h-6 duration-200 hover:font-medium ${
+                  isIntersecting
+                    ? " text-zinc-400 hover:text-zinc-100"
+                    : "text-zinc-600 hover:text-zinc-900"
+                } `}
+              />
+            </Link>
+            <Link
+              target="_blank"
+              href="https://github.com/DAOveloped/DAOstination"
+            >
+              <RiDiscordLine
                 className={`w-6 h-6 duration-200 hover:font-medium ${
                   isIntersecting
                     ? " text-zinc-400 hover:text-zinc-100"
