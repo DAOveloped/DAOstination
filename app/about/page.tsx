@@ -68,19 +68,24 @@ export default function Home() {
       >
         <br />
         <div
-          className="text-md text-zinc-300 my-16 text-center animate-fade-in"
+          className="text-md text-zinc-300 my-16 text-left animate-fade-in"
           style={{ width: "70%", margin: "0 auto", marginBottom: "4em" }}
         >
-          <h2 className="text-lg text-zinc-400 ">
-            What is DAOstination DAO all about?
-          </h2>
+          <p style={{ textIndent: "1.5em" }}>
+            DAOstination DAO is a platform where members come together to
+            collaboratively fund the purchase, rental, or lease of various
+            destinations around the world. Whether it's a cozy cabin in the
+            woods, a ski house in Denver during Eth Denver, a sailboat off the
+            coast of California during the Pebble Beach golf tournament, or a
+            yacht during F1 in Monaco, DAOstination DAO offers its members
+            unforgettable experiences in diverse settings.
+          </p>
           <br />
           <p style={{ textIndent: "1.5em" }}>
-            DAOstination DAO is designed to provide a dynamic platform with
-            various membership tiers, voting mechanisms, and governance
-            structures. Its main goal is to strike a delicate balance between
-            the diverse interests of DAOstinations, legal compliance, and
-            democratic decision-making.
+            Designed to provide a dynamic platform with various membership
+            tiers, voting mechanisms, and governance structures, its main goal
+            is to strike a delicate balance between the diverse interests of
+            DAOstinations, legal compliance, and democratic decision-making.
           </p>
           <p style={{ marginTop: "1em", textIndent: "1.5em" }}>
             At the heart of DAOstination DAO lies the DAOstination token. This
