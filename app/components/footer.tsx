@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="py-4 text-center text-white text-sm">
+    <footer className="py-4 text-center text-white text-xs">
       Built on{" "}
       <a
         href="https://arweave.org"
