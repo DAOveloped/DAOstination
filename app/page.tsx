@@ -5,7 +5,7 @@ import Footer from "./components/footer";
 
 const navigation = [
   { name: "About", href: "/about" },
-  { name: "daostinations", href: "/projects" },
+  { name: "Daostinations", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -52,15 +52,12 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <div className="hidden w-screen h-px animate-glow md:block  bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <img
         src="/banner.png"
         alt="Banner"
         className="z-10 w-auto h-auto max-h-80 md:max-h-96 "
         style={{ width: "50%", height: "auto" }}
-      />{" "}
-      {/* Replace h1 with banner image */}
-      <div className="hidden w-screen h-px animate-glow md:block  bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
+      />
       <div className="my-16 text-center">
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
       </div>
