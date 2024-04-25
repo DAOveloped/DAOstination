@@ -1,11 +1,10 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import Particles from "../components/particles";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "DAOstinations", href: "/projects" },
+  { name: "Daostinations", href: "/projects" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -46,10 +45,6 @@ export default function Home() {
         </ul>
       </nav>
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <Particles
-        className="fixed inset-0 -z-10 animate-fade-in "
-        quantity={3000}
-      />
       <h1
         className="z-10 text-3xl duration-1000 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-8xl whitespace-nowrap"
         style={{
@@ -59,7 +54,7 @@ export default function Home() {
         }} // Apply random text gradient
       >
         About <br />
-        DAOstination DAO
+        daostination
       </h1>
       <br />
       <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
@@ -79,7 +74,7 @@ export default function Home() {
           style={{ width: "70%", margin: "0 auto" }}
         >
           <p style={{ marginTop: "1em", textIndent: "1.5em" }}>
-            DAOstination DAO is a platform where members come together to
+            Daostination is a platform where members come together to
             collaboratively fund the purchase, rental, or lease of various
             destinations around the world. Whether it's a cozy cabin in the
             woods, a ski house in Denver during Eth Denver, a sailboat off the
