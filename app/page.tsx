@@ -55,8 +55,8 @@ export default function Home() {
       <img
         src="/banner.png"
         alt="Banner"
-        className="z-10 w-auto h-auto max-h-80 md:max-h-96"
-        style={{ width: "50%", height: "auto" }}
+        className="z-10 w-full max-w-3xl h-auto md:w-1/2 md:max-w-4xl"
+        style={{ maxWidth: "50%" }}
       />
       <div className="my-16 text-center">
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
@@ -65,7 +65,8 @@ export default function Home() {
       <style jsx>{`
         @media (max-width: 640px) {
           img {
-            width: 80%;
+            width: 80%; /* Set image width to 80% on mobile */
+            max-width: unset; /* Reset max-width to override desktop styles */
           }
         }
       `}</style>
