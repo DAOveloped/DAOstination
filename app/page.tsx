@@ -55,13 +55,20 @@ export default function Home() {
       <img
         src="/banner.png"
         alt="Banner"
-        className="z-10 w-auto h-auto max-h-80 md:max-h-96 "
+        className="z-10 w-auto h-auto max-h-80 md:max-h-96"
         style={{ width: "50%", height: "auto" }}
       />
       <div className="my-16 text-center">
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
       </div>
       <Footer />
+      <style jsx>{`
+        @media (max-width: 640px) {
+          img {
+            width: 80%;
+          }
+        }
+      `}</style>
     </div>
   );
 }
