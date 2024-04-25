@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import Footer from "./components/footer";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -63,6 +64,7 @@ export default function Home() {
       <div className="my-16 text-center animate-fade-in">
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
       </div>
+      <Footer />
     </div>
   );
 }
