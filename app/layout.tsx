@@ -6,12 +6,12 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "DAOstination DAO",
-    template: "%s | DAOstination",
+    default: "daostination",
+    template: "%s | daostination",
   },
-  description: "Where is your next DAOstination? ",
+  description: "stay, work, travel - together ",
   openGraph: {
-    title: "DAOstination",
+    title: "daostination",
     description: "Where is your next DAOstination?",
     url: "https://DAOstination.vercel.app",
     siteName: "DAOstination.vercel.app",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "DAOstination",
+    title: "daostination",
     card: "summary_large_image",
   },
   icons: {
-    shortcut: "/favicon.jpg",
+    shortcut: "/favicon.png",
   },
 };
 const inter = Inter({

@@ -1,0 +1,6 @@
+.bg-image {
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh; /* Ensure background covers entire viewport */
+}
