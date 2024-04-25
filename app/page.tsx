@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Footer from "./components/footer";
-import styles from "./styles.module.css";
+import "./styles.module.css";
 
 const navigation = [
   { name: "About", href: "/about" },
