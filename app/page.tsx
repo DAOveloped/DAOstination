@@ -63,14 +63,6 @@ export default function Home() {
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
       </div>
       <Footer />
-      <style jsx>{`
-        @media (max-width: 640px) {
-          img {
-            width: 80%; /* Set image width to 80% on mobile */
-            max-width: unset; /* Reset max-width to override desktop styles */
-          }
-        }
-      `}</style>
     </div>
   );
 }
