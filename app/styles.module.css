@@ -1,5 +1,16 @@
+.background {
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.banner {
+  max-width: 50%; /* Default size */
+}
+
 @media (max-width: 640px) {
-  .img {
-    width: 80%; /* Set image width to 80% on mobile */
+  /* Adjust size for mobile devices */
+  .banner {
+    max-width: 80%;
   }
 }

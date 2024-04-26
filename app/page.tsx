@@ -2,7 +2,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import Footer from "./components/footer";
-import "./styles.module.css";
+import styles from "./styles.module.css";
 
 const navigation = [
   { name: "About", href: "/about" },
@@ -33,14 +33,9 @@ export default function Home() {
 
   return (
     <div
-      className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden"
-      style={{
-        backgroundImage: `url("/background.jpg")`, // Set background image
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      className={`flex flex-col items-center justify-center w-screen h-screen overflow-hidden ${styles.background}`}
     >
-      <nav className="my-16 ">
+      <nav className="my-16">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
             <Link
@@ -56,8 +51,7 @@ export default function Home() {
       <img
         src="/banner.png"
         alt="Banner"
-        className="z-10 w-full max-w-3xl h-auto md:w-1/2 md:max-w-4xl"
-        style={{ maxWidth: "50%" }}
+        className={`z-10 w-full max-w-3xl h-auto md:w-1/2 md:max-w-4xl ${styles.banner}`}
       />
       <div className="my-16 text-center">
         <h2 className="text-sm text-white">stay, work, travel - together</h2>
