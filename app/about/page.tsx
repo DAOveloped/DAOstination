@@ -9,29 +9,9 @@ const navigation = [
 ];
 
 export default function Home() {
-  // Function to generate random color
-  const generateRandomColor = () => {
-    const color = Math.floor(Math.random() * 16777215).toString(16);
-    return `#${color.padStart(6, "0")}`;
-  };
-
-  // State to store random text gradient
-  const [randomTextGradient, setRandomTextGradient] = useState("");
-
-  // Generate random text gradient on component mount
-  useEffect(() => {
-    const numberOfColors = 5; // You can adjust the number of colors in the gradient
-    let gradient = "linear-gradient(to right";
-    for (let i = 0; i < numberOfColors; i++) {
-      gradient += `, ${generateRandomColor()}`;
-    }
-    gradient += ")";
-    setRandomTextGradient(gradient);
-  }, []);
-
   return (
     <div className="flex flex-col items-center justify-center w-screen bg-gradient-to-tl from-black via-zinc-600/20 to-black">
-      <nav className="my-16 animate-fade-in">
+      <nav className="my-16">
         <ul className="flex items-center justify-center gap-4 ">
           {navigation.map((item) => (
             <Link
@@ -44,33 +24,23 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-left bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
-      <h1
-        className="z-10 text-3xl duration-1000 cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-8xl whitespace-nowrap"
-        style={{
-          backgroundImage: randomTextGradient,
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-        }} // Apply random text gradient
-      >
-        About <br />
-        daostination
+      <h1 className="z-10 text-3xl duration-1000 cursor-default text-edge-outline font-display sm:text-6xl md:text-8xl whitespace-nowrap">
+        about
       </h1>
       <br />
-      <div className="hidden w-screen h-px animate-glow md:block animate-fade-right bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0" />
       <div
-        className="text-md text-zinc-300 my-16 text-center animate-fade-in"
+        className="text-md text-zinc-300 my-16 text-center"
         style={{ width: "70%", margin: "0 auto" }}
       >
         <br />
         <div
-          className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+          className="text-xl text-zinc-300 my-16 text-center"
           style={{ width: "70%", margin: "0 auto" }}
         >
           Overview
         </div>
         <div
-          className="text-md text-zinc-300 my-16 text-left animate-fade-in"
+          className="text-md text-zinc-300 my-16 text-left"
           style={{ width: "70%", margin: "0 auto" }}
         >
           <p style={{ marginTop: "1em", textIndent: "1.5em" }}>
@@ -120,7 +90,7 @@ export default function Home() {
 
           <br />
           <div
-            className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+            className="text-xl text-zinc-300 my-16 text-center"
             style={{ width: "70%", margin: "0 auto" }}
           >
             User Journey
@@ -142,7 +112,7 @@ export default function Home() {
             educational event and stay in the DAO location with other members
           </p>
           <div
-            className="text-xl text-zinc-300 my-16 text-center animate-fade-in"
+            className="text-xl text-zinc-300 my-16 text-center"
             style={{ width: "70%", margin: "0 auto" }}
           >
             Risk Management

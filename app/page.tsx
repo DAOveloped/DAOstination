@@ -11,26 +11,6 @@ const navigation = [
 ];
 
 export default function Home() {
-  // Function to generate random color
-  const generateRandomColor = () => {
-    const color = Math.floor(Math.random() * 16777215).toString(16);
-    return `#${color.padStart(6, "0")}`;
-  };
-
-  // State to store random text gradient
-  const [randomTextGradient, setRandomTextGradient] = useState("");
-
-  // Generate random text gradient on component mount
-  useEffect(() => {
-    const numberOfColors = 5; // You can adjust the number of colors in the gradient
-    let gradient = "linear-gradient(to right";
-    for (let i = 0; i < numberOfColors; i++) {
-      gradient += `, ${generateRandomColor()}`;
-    }
-    gradient += ")";
-    setRandomTextGradient(gradient);
-  }, []);
-
   return (
     <div
       className={`flex flex-col items-center justify-center w-screen h-screen overflow-hidden ${styles.background}`}
