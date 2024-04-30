@@ -21,10 +21,10 @@ const navigation = [
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState("");
-  const [quantity, setQuantity] = useState(0);
-  const [delay, setDelay] = useState(0);
-  const [voteTarget, setVoteTarget] = useState("");
-  const [voteSide, setVoteSide] = useState("");
+  const [quantity, setQuantity] = useState<number>(0); // Specify type as number
+  const [delay, setDelay] = useState<number>(0); // Specify type as number
+  const [voteTarget, setVoteTarget] = useState<string>(""); // Specify type as string
+  const [voteSide, setVoteSide] = useState<string>(""); // Specify type as string
 
   useEffect(() => {
     const connectWallet = async () => {
@@ -117,8 +117,8 @@ export default function Home() {
                 Quantity:
                 <input
                   type="number"
-                  value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
+                  value={quantity.toString()} // Convert to string as it's a text input
+                  onChange={(e) => setQuantity(parseFloat(e.target.value))} // Convert to number
                   className="border border-zinc-400 rounded-md p-1"
                 />
               </label>
@@ -126,8 +126,8 @@ export default function Home() {
                 Unstake Delay:
                 <input
                   type="number"
-                  value={delay}
-                  onChange={(e) => setDelay(e.target.value)}
+                  value={delay.toString()} // Convert to string as it's a text input
+                  onChange={(e) => setDelay(parseFloat(e.target.value))} // Convert to number
                   className="border border-zinc-400 rounded-md p-1"
                 />
               </label>
@@ -147,8 +147,8 @@ export default function Home() {
                 Quantity:
                 <input
                   type="number"
-                  value={quantity}
-                  onChange={(e) => setQuantity(parseFloat(e.target.value))}
+                  value={quantity.toString()} // Convert to string as it's a text input
+                  onChange={(e) => setQuantity(parseFloat(e.target.value))} // Convert to number
                   className="border border-zinc-400 rounded-md p-1"
                 />
               </label>
