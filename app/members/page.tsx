@@ -36,7 +36,7 @@ export default function Home() {
 
     // Cleanup function to remove the event listener when the component unmounts
     return () => {
-      wallet.off("addressChange");
+      wallet.off("addressChange", () => {}); // Provide an empty callback function
     };
   }, []);
 
