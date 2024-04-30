@@ -43,4 +43,9 @@
   .gap-4 {
     margin-bottom: 1rem;
   }
+
+    .input-narrow {
+    width: 50%;
+  }
+}
 }

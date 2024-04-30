@@ -117,18 +117,18 @@ export default function Home() {
                 Quantity:
                 <input
                   type="number"
-                  value={quantity.toString()} // Convert to string as it's a text input
-                  onChange={(e) => setQuantity(parseFloat(e.target.value))} // Convert to number
-                  className="border border-zinc-400 rounded-md p-1"
+                  value={quantity.toString()}
+                  onChange={(e) => setQuantity(parseFloat(e.target.value))}
+                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
                 />
               </label>
               <label>
                 Unstake Delay:
                 <input
                   type="number"
-                  value={delay.toString()} // Convert to string as it's a text input
-                  onChange={(e) => setDelay(parseFloat(e.target.value))} // Convert to number
-                  className="border border-zinc-400 rounded-md p-1"
+                  value={delay.toString()}
+                  onChange={(e) => setDelay(parseFloat(e.target.value))}
+                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
                 />
               </label>
               <button
@@ -170,7 +170,7 @@ export default function Home() {
                   type="text"
                   value={voteTarget}
                   onChange={(e) => setVoteTarget(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1"
+                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
                 />
               </label>
               <label>
@@ -179,7 +179,7 @@ export default function Home() {
                   type="text"
                   value={voteSide}
                   onChange={(e) => setVoteSide(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1"
+                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
                 />
               </label>
               <button
