@@ -35,7 +35,7 @@ export default function Home() {
     connectWallet();
     return () => {
       // Unsubscribe from the event listener
-      wallet.off(null, () => {}); // Pass null or an empty string as the event type
+      wallet.off("", () => {}); // Pass an empty string as the event type
     };
   }, []);
 
