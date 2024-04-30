@@ -1,0 +1,46 @@
+/* styles.module.css */
+
+@media (max-width: 640px) {
+  /* Navigation */
+  nav ul {
+    flex-direction: column;
+  }
+
+  /* Heading */
+  .whitespace-nowrap {
+    font-size: 2rem;
+  }
+
+  /* Wallet */
+  .my-3:nth-child(2) {
+    display: none;
+  }
+
+  /* Daostination select */
+  .my-9:nth-child(4) {
+    margin-top: 3rem;
+  }
+
+  /* Form */
+  .mb-8,
+  .mb-16 {
+    margin-bottom: 3rem;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 1rem;
+  }
+
+  input[type="number"],
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .gap-4 {
+    margin-bottom: 1rem;
+  }
+}
