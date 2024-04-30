@@ -148,7 +148,7 @@ export default function Home() {
                 <input
                   type="number"
                   value={quantity}
-                  onChange={(e) => setQuantity(e.target.value)}
+                  onChange={(e) => setQuantity(parseInt(e.target.value))}
                   className="border border-zinc-400 rounded-md p-1"
                 />
               </label>
