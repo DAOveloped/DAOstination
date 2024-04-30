@@ -29,7 +29,7 @@ export default function Home() {
   useEffect(() => {
     const connectWallet = async () => {
       await wallet.connect();
-      setWalletAddress(wallet.address);
+      setWalletAddress(wallet.address || ""); // Provide default value for wallet.address
     };
 
     connectWallet();
