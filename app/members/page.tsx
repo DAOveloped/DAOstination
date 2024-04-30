@@ -33,11 +33,6 @@ export default function Home() {
     };
 
     connectWallet();
-
-    // Cleanup function to remove the event listener when the component unmounts
-    return () => {
-      wallet.off("addressChange", () => {}); // Provide an empty callback function
-    };
   }, []);
 
   const handleStake = () => {
