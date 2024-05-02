@@ -156,6 +156,7 @@ export default function Home() {
                   value={quantity.toString()} // Convert to string as it's a text input
                   onChange={(e) => setQuantity(parseFloat(e.target.value))} // Convert to number
                   className="border border-zinc-400 rounded-md p-1"
+                  style={{ width: "120px" }}
                 />
               </label>
               <button
@@ -176,7 +177,8 @@ export default function Home() {
                   type="text"
                   value={voteTarget}
                   onChange={(e) => setVoteTarget(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow"
+                  className="border border-zinc-400 rounded-md p-1"
+                  style={{ width: "120px" }}
                 />
               </label>
               <label>
@@ -185,7 +187,8 @@ export default function Home() {
                   type="text"
                   value={voteSide}
                   onChange={(e) => setVoteSide(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow"
+                  className="border border-zinc-400 rounded-md p-1"
+                  style={{ width: "120px" }}
                 />
               </label>
               <button
