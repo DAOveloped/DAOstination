@@ -37,15 +37,14 @@
 
   input[type="number"],
   input[type="text"] {
-    width: 30%;
+    width: 100%; /* Adjusted width for mobile */
   }
 
   .gap-4 {
     margin-bottom: 1rem;
   }
 
-    .input-narrow {
-    width: 30%;
+  .input-narrow {
+    width: 100%; /* Adjusted width for mobile */
   }
-}
 }
