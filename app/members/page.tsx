@@ -75,14 +75,13 @@ export default function Home() {
       <h1 className="z-10 text-3xl duration-1000 cursor-default text-edge-outline font-display sm:text-6xl md:text-8xl whitespace-nowrap">
         member dashboard
       </h1>
-
       <div>
-        <p
-          className="text-md text-zinc-300 my-3 text-center cursor-pointer"
+        <button
+          className="text-md text-zinc-300 my-3 text-center bg-zinc-500 px-4 py-2 rounded-md hover:bg-zinc-600"
           onClick={() => wallet.connect()}
         >
           Connect your Arweave wallet
-        </p>
+        </button>
         <p className="text-md text-zinc-300 my-3 text-center">
           Your wallet address:{" "}
           {walletAddress ? (
@@ -92,6 +91,7 @@ export default function Home() {
           )}
         </p>
       </div>
+
       <div className="text-md text-zinc-300 my-9 text-center">
         <p>Select a daostination:</p>
         <select
