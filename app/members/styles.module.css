@@ -1,6 +1,6 @@
 @media (max-width: 640px) {
   /* Navigation */
-  nav ul {
+  .nav ul {
     flex-direction: column;
   }
 
@@ -25,16 +25,16 @@
     margin-bottom: 3rem;
   }
 
-  form {
+  .form {
     flex-direction: column;
   }
 
-  label {
+  .label {
     margin-bottom: 1rem;
   }
 
-  input[type="number"],
-  input[type="text"] {
+  .input[type="number"],
+  .input[type="text"] {
     width: auto; /* Set inputs to full width for mobile */
     margin-bottom: 1rem; /* Add space between stacked inputs */
   }
@@ -44,6 +44,6 @@
   }
 
   .input-narrow {
-    width: auto; /* Reset width for narrow inputs */
+    width: 100px; /* Reset width for narrow inputs */
   }
 }

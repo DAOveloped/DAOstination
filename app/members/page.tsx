@@ -3,6 +3,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { ArweaveWebWallet } from "arweave-wallet-connector";
 import { daostinations } from "../components/daostinations";
+import "./styles.module.css";
 
 const state = { url: "arweave.app" };
 const wallet = new ArweaveWebWallet(
@@ -108,7 +109,10 @@ export default function Home() {
         </select>
       </div>
       <div className="text-md text-zinc-300 my-10 text-center">
-        <div style={{ width: "70%", margin: "0 auto" }}>
+        <div
+          className="container items-center"
+          style={{ width: "70%", margin: "0 auto" }}
+        >
           {/* Staking Form */}
           <div className="mb-16">
             <h2 className="text-lg text-zinc-500 mb-2">Stake Tokens</h2>
@@ -119,7 +123,8 @@ export default function Home() {
                   type="number"
                   value={quantity.toString()}
                   onChange={(e) => setQuantity(parseFloat(e.target.value))}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
+                  className="border border-zinc-400 rounded-md p-1"
+                  style={{ width: "120px" }}
                 />
               </label>
               <label>
@@ -128,7 +133,8 @@ export default function Home() {
                   type="number"
                   value={delay.toString()}
                   onChange={(e) => setDelay(parseFloat(e.target.value))}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
+                  className="border border-zinc-400 rounded-md p-1"
+                  style={{ width: "120px" }}
                 />
               </label>
               <button
@@ -170,7 +176,7 @@ export default function Home() {
                   type="text"
                   value={voteTarget}
                   onChange={(e) => setVoteTarget(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
+                  className="border border-zinc-400 rounded-md p-1 input-narrow"
                 />
               </label>
               <label>
@@ -179,7 +185,7 @@ export default function Home() {
                   type="text"
                   value={voteSide}
                   onChange={(e) => setVoteSide(e.target.value)}
-                  className="border border-zinc-400 rounded-md p-1 input-narrow" // Add input-narrow class
+                  className="border border-zinc-400 rounded-md p-1 input-narrow"
                 />
               </label>
               <button
