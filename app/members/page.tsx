@@ -82,7 +82,7 @@ export default function Home() {
         >
           Connect your Arweave wallet
         </button>
-        <p className="text-md text-zinc-300 my-3 text-center">
+        <p className="text-md text-zinc-300 mt-5 text-center">
           Your wallet address:{" "}
           {walletAddress ? (
             <span style={{ color: "#FF8243" }}>{walletAddress}</span>
@@ -92,7 +92,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="text-md text-zinc-300 my-9 text-center">
+      <div className="text-md text-zinc-300 mt-8 mb-6 text-center">
         <p>Select a daostination:</p>
         <select
           value={voteTarget}
@@ -110,7 +110,7 @@ export default function Home() {
       <div className="text-md text-zinc-300 my-16 text-center">
         <div style={{ width: "70%", margin: "0 auto" }}>
           {/* Staking Form */}
-          <div className="mb-8">
+          <div className="mb-16">
             <h2 className="text-lg text-zinc-500 mb-2">Stake Tokens</h2>
             <form onSubmit={handleStake} className="flex items-center gap-4">
               <label>
@@ -140,7 +140,7 @@ export default function Home() {
             </form>
           </div>
           {/* Unstaking Form */}
-          <div className="mb-8">
+          <div className="mb-16">
             <h2 className="text-lg text-zinc-500 mb-2">Unstake Tokens</h2>
             <form onSubmit={handleUnstake} className="flex items-center gap-4">
               <label>
@@ -161,7 +161,7 @@ export default function Home() {
             </form>
           </div>
           {/* Voting Form */}
-          <div>
+          <div className="mb-16">
             <h2 className="text-lg text-zinc-500 mb-2">Vote</h2>
             <form onSubmit={handleVote} className="flex items-center gap-4">
               <label>
