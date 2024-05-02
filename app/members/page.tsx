@@ -72,7 +72,7 @@ export default function Home() {
           ))}
         </ul>
       </nav>
-      <h1 className="z-10 text-3xl duration-1000 cursor-default text-edge-outline font-display sm:text-6xl md:text-8xl whitespace-nowrap">
+      <h1 className="z-10 text-3xl duration-1000 cursor-default text-edge-outline font-display sm:text-6xl md:text-8xl mb-5 whitespace-nowrap">
         member dashboard
       </h1>
       <div>
@@ -82,7 +82,7 @@ export default function Home() {
         >
           Connect your Arweave wallet
         </button>
-        <p className="text-md text-zinc-300 mt-5 text-center">
+        <p className="text-md text-zinc-300 mt-5 mb-5 text-center">
           Your wallet address:{" "}
           {walletAddress ? (
             <span style={{ color: "#FF8243" }}>{walletAddress}</span>
@@ -92,7 +92,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="text-md text-zinc-300 mt-8 mb-6 text-center">
+      <div className="text-md text-zinc-300 mt-8 mb-2 text-center">
         <p>Select a daostination:</p>
         <select
           value={voteTarget}
@@ -107,7 +107,7 @@ export default function Home() {
           ))}
         </select>
       </div>
-      <div className="text-md text-zinc-300 my-16 text-center">
+      <div className="text-md text-zinc-300 my-10 text-center">
         <div style={{ width: "70%", margin: "0 auto" }}>
           {/* Staking Form */}
           <div className="mb-16">

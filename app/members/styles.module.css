@@ -37,7 +37,8 @@
 
   input[type="number"],
   input[type="text"] {
-    width: 20%; /* Adjusted width for mobile */
+    width: 100%; /* Set inputs to full width for mobile */
+    margin-bottom: 1rem; /* Add space between stacked inputs */
   }
 
   .gap-4 {
@@ -45,6 +46,6 @@
   }
 
   .input-narrow {
-    width: 20%; /* Adjusted width for mobile */
+    width: auto; /* Reset width for narrow inputs */
   }
 }
