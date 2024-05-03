@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
+import axios from "axios"; // Import Axios
 import { ArweaveWebWallet } from "arweave-wallet-connector";
 import { daostinations } from "../components/daostinations";
 import "./styles.module.css";
@@ -22,29 +23,40 @@ const navigation = [
 
 export default function Home() {
   const [walletAddress, setWalletAddress] = useState("");
-  const [quantity, setQuantity] = useState<number>(0); // Specify type as number
-  const [delay, setDelay] = useState<number>(0); // Specify type as number
-  const [voteTarget, setVoteTarget] = useState<string>(""); // Specify type as string
-  const [voteSide, setVoteSide] = useState<string>(""); // Specify type as string
+  const [balance, setBalance] = useState(0); // State to hold wallet balance
+  const [quantity, setQuantity] = useState<number>(0);
+  const [delay, setDelay] = useState<number>(0);
+  const [voteTarget, setVoteTarget] = useState<string>("");
+  const [voteSide, setVoteSide] = useState<string>("");
 
   useEffect(() => {
     const connectWallet = async () => {
       await wallet.connect();
-      setWalletAddress(wallet.address || ""); // Provide default value for wallet.address
+      setWalletAddress(wallet.address || "");
+      if (wallet.address) {
+        fetchWalletBalance(wallet.address); // Fetch balance if wallet is connected
+      }
     };
 
     connectWallet();
   }, []);
 
+  const fetchWalletBalance = async (address) => {
+    try {
+      const response = await axios.get(
+        `https://arweave.net/wallet/${address}/balance`
+      );
+      setBalance(response.data); // Update balance state
+    } catch (error) {
+      console.error("Error fetching wallet balance:", error);
+    }
+  };
+
   const handleStake = () => {
-    // Implement logic to handle stake action
-    // Example: Call smart contract function to stake tokens
     console.log("Staking", quantity, "tokens with unstake delay of", delay);
   };
 
   const handleUnstake = () => {
-    // Implement logic to handle unstake action
-    // Example: Call smart contract function to unstake tokens
     console.log("Unstaking", quantity, "tokens");
   };
 
@@ -53,8 +65,6 @@ export default function Home() {
       console.log("Please select a daostination");
       return;
     }
-    // Implement logic to handle vote action
-    // Example: Call smart contract function to vote
     console.log("Voting for", voteTarget, "with side", voteSide);
   };
 
@@ -76,19 +86,30 @@ export default function Home() {
       <h1 className="z-10 text-3xl duration-1000 cursor-default text-edge-outline font-display sm:text-6xl md:text-8xl mb-5 whitespace-nowrap">
         member dashboard
       </h1>
-      <div>
+      <div style={{ width: "300px" }}>
         <button
           className="text-md text-zinc-300 my-3 text-center bg-zinc-500 px-4 py-2 rounded-md hover:bg-zinc-600"
           onClick={() => wallet.connect()}
+          style={{ width: "100%" }} // Set button width to fill the container
         >
           Connect your Arweave wallet
         </button>
         <p className="text-md text-zinc-300 mt-5 mb-5 text-center">
-          Your wallet address:{" "}
+          Your wallet address is:{" "}
           {walletAddress ? (
             <span style={{ color: "#FF8243" }}>{walletAddress}</span>
           ) : (
-            "Not connected"
+            "not connected"
+          )}
+        </p>
+        <p className="text-md text-zinc-300 mt-2 mb-2 text-center">
+          Wallet balance:{" "}
+          {walletAddress ? (
+            <span style={{ color: "#FF8243" }}>
+              {(parseFloat(balance) / 1000000000000).toFixed(12)} AR
+            </span>
+          ) : (
+            "not connected"
           )}
         </p>
       </div>
@@ -99,6 +120,7 @@ export default function Home() {
           value={voteTarget}
           onChange={(e) => setVoteTarget(e.target.value)}
           className="mt-2 border border-zinc-400 rounded-md p-1"
+          style={{ color: "#000000" }} // Change the text color inside the dropdown
         >
           <option value="">Select</option>
           {daostinations.map((daostination) => (
@@ -108,10 +130,11 @@ export default function Home() {
           ))}
         </select>
       </div>
+
       <div className="text-md text-zinc-300 my-10 text-center">
         <div
           className="container items-center"
-          style={{ width: "70%", margin: "0 auto" }}
+          style={{ width: "90%", margin: "0 auto" }}
         >
           {/* Staking Form */}
           <div className="mb-16">
@@ -153,8 +176,8 @@ export default function Home() {
                 Quantity:
                 <input
                   type="number"
-                  value={quantity.toString()} // Convert to string as it's a text input
-                  onChange={(e) => setQuantity(parseFloat(e.target.value))} // Convert to number
+                  value={quantity.toString()}
+                  onChange={(e) => setQuantity(parseFloat(e.target.value))}
                   className="border border-zinc-400 rounded-md p-1"
                   style={{ width: "120px" }}
                 />
