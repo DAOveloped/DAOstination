@@ -41,7 +41,7 @@ export default function Home() {
     connectWallet();
   }, []);
 
-  const fetchWalletBalance = async (address) => {
+  const fetchWalletBalance = async (address: string) => {
     try {
       const response = await axios.get(
         `https://arweave.net/wallet/${address}/balance`
