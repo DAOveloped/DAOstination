@@ -106,7 +106,7 @@ export default function Home() {
           Wallet balance:{" "}
           {walletAddress ? (
             <span style={{ color: "#FF8243" }}>
-              {(parseFloat(balance) / 1000000000000).toFixed(12).toString()} AR
+              {(parseFloat(balance.toString()) / 1000000000000).toFixed(12)} AR
             </span>
           ) : (
             "not connected"
